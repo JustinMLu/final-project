@@ -1,0 +1,333 @@
+/* Overall font stuff */
+p, h1, h2, a {
+    color: white;
+    font-family: "Montserrat";
+}
+
+p {
+    font-size: 1.5vw;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 3vw;
+    /* text-decoration: underline; */
+    /* text-decoration-color: white; */
+}
+
+h1::first-letter, h2::first-letter {
+    font-weight: bold;
+    color: lightblue;
+}
+
+.flex-link {
+    text-decoration: none;
+}
+
+.current {
+    color: lightblue;
+}
+
+.current::before {
+    content: "\00BB";
+    margin-right: 6px;
+}
+
+.click-me {
+    text-align: center;
+    margin: 1.5% 0%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.highlight {
+    background: linear-gradient(120deg, #555555 0%, #555555 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: 0 60%;
+}
+
+.skip {
+    font-size: 1.1vw;
+    opacity: 0;
+    position: absolute;
+    top: -50px;
+}
+
+.skip:focus {
+    opacity: 100;
+    position: relative;
+    top: 0px;
+    margin-left: 10px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+/* NAV SIDEBAR */
+.nav_links {
+    height: 100%; 
+    width: 90px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: black; 
+    overflow-x: hidden; 
+    padding-top: 15px;
+}
+/* NAV MENU LINKS */
+.nav_item a {
+    padding: 6px 8px 6px 16px;
+    color: #818181;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+}
+
+    .nav_item a:hover {
+    color: #f1f1f1;
+}
+
+/* MAIN STYLING STUFF */
+body {
+    margin: 0px 0px 0px 90px;
+    background-color: #222222;
+}
+
+header {
+    background-image: url('../images/toronto-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1% 0% 4% 0%;
+}
+
+.header-img {
+    width: 25%;
+    height: 35%;
+    border: 3px solid #555555;
+    margin: 3% 3% 3% 10%;
+}
+
+.index, .about, .contact {
+    padding: 2% 0%;
+}
+
+.index p {
+    text-align: center;
+}
+
+.github-wrapper {
+    text-align: center;
+    margin: 1%;
+}
+
+.github-wrapper h2 {
+    margin: 3% 0% 1% 0%;
+}
+
+.github-normal {
+    visibility: hidden;
+}
+
+/* GRID - for about.html */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: auto;
+    grid-gap: 3%;
+    row-gap: 5%;
+    padding: 4%;
+}
+.grid-item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.grid-item img {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+    border: 3px solid #555555; 
+}
+
+.grid-item p {
+    font-size: 2vw;
+}
+
+/* FLEX - for projects.html */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+.flex-item {
+    /* text-align: center; */
+    object-fit: cover;
+    margin: 4%;
+    padding: 2%;
+    border: 1px solid white;
+    border-radius: 5px;
+    max-width: 800px;
+    max-height: 500px;
+    overflow: scroll;
+}
+.flex-item h2 {
+    font-size: 2vw;
+}
+
+.nested-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    grid-gap: 2px;
+}
+
+.nested-flex-container img {
+    width: 30%;
+    height: auto;
+}
+
+.iframe-wrapper {
+    text-align: center;
+    margin: 2%;
+}
+
+.iframe {
+    width: 90%;
+    height: auto;
+    margin: 10px 0px;
+}
+
+/* TABLET */
+@media screen and (min-width: 480px) {
+    p {
+        font-size: 1.35vw;
+    }
+
+    .nav_links {
+        padding-top: 20px; width: 110px;
+    }
+
+    body {
+        margin: 0px 0px 0px 110px;
+    }
+
+    .nav_links a {
+        font-size: 18px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    
+    .grid-item p {
+        font-size: 1.5vw;
+    }
+
+    .flex-item {
+        margin: 3%;
+        padding: 1.5%;
+    }
+
+    .nested-flex-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .iframe {
+        width: 90%;
+        height: auto;
+    }
+
+    .github-normal {
+        visibility: visible;
+    }
+    .github-small {
+        display: none;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+    p {
+        font-size: 1.25vw;
+    }
+    
+    .nav_links {
+        padding-top: 20px; 
+        width: 165px;
+    }
+
+    body {
+        margin: 0px 0px 0px 165px;
+    }
+
+    .nav_links a {
+        font-size: 28px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 8%;
+    }
+
+    .grid-item p {
+        font-size: 1.25vw;
+    }
+
+    .flex-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .flex-item h2 {
+        font-size: 1.5vw;
+    }
+    .nested-flex-container img {
+        flex-direction: row;
+        width: 175px;
+        height: 165px;
+        margin: 1%;
+    }
+
+    .iframe {
+        width: 575px;
+        height: 450px;
+    }
+
+    .github-normal {
+        visibility: visible;
+    }
+    .github-small {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .iframe {
+        width: 750px;
+        height: 500px;
+    }
+
+    .github-normal {
+        visibility: visible;
+    }
+    .github-small {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .header-img {
+        opacity: 0;
+    }
+}
+  
