@@ -20,6 +20,10 @@ h1::first-letter, h2::first-letter {
     color: lightblue;
 }
 
+.blurb {
+    margin: 2px 4px;
+}
+
 .flex-link {
     text-decoration: none;
 }
